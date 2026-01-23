@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Hondengedragstherapeut Yasmine Leyman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hondengedragstherapie op maat door Yasmine Leyman. Samen werken aan meer rust en vertrouwen tussen jou en je hond.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #f7f6f2;
+            --color-bg-alt: #ffffff;
+            --color-primary: #4d7c5b;
+            --color-primary-dark: #395b43;
+            --color-accent: #f3a76b;
+            --color-text: #333333;
+            --color-muted: #777777;
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+            --radius-lg: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Layout & nav */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(247, 246, 242, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 10px rgba(0,0,0,0.03);
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.04em;
+        }
+
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #fdfcfb, #f3a76b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #fff;
+            box-shadow: var(--shadow-soft);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.2rem;
+            margin: 0;
+            padding: 0;
+            font-size: 0.95rem;
+        }
+
+        nav a {
+            position: relative;
+            padding-bottom: 0.2rem;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary);
+            transition: width 0.2s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.45rem 0.95rem;
+            background: var(--color-primary);
+            color: #fff;
+            border-radius: 999px;
+            font-weight: 600;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav-cta:hover {
+            background: var(--color-primary-dark);
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 3.5rem 0 3rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero-kicker {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--color-primary);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 3.2vw + 1.4rem, 3rem);
+            margin: 0 0 0.7rem;
+        }
+
+        .hero h1 span {
+            color: var(--color-primary);
+        }
+
+        .hero-subtitle {
+            color: var(--color-muted);
+            max-width: 30rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .badge {
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(77, 124, 91, 0.06);
+            font-size: 0.8rem;
+            color: var(--color-primary-dark);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            padding: 0.7rem 1.4rem;
+            border-radius: 999px;
+            border: none;
+            background: var(--color-primary);
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.95rem;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+
+        .btn-ghost {
+            padding: 0.7rem 1.1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(0,0,0,0.06);
+            background: transparent;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: var(--color-text);
+        }
+
+        .hero-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--color-muted);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-card {
+            background: var(--color-bg-alt);
+            border-radius: 24px;
+            padding: 1.4rem;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-paw {
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle at 30% 30%, #fff, #fbe3c5);
+            opacity: 0.8;
+            border-radius: 30% 70% 60% 40%;
+        }
+
+        .hero-photo {
+            border-radius: 18px;
+            background: linear-gradient(135deg, #fbe3c5, #e2f1e7);
+            height: 220px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-photo::after {
+            content: "Plaats hier een foto van Yasmine met een hond";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .hero-mini {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .hero-mini-block {
+            flex: 1;
+        }
+
+        .hero-mini-title {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .hero-mini-sub {
+            color: var(--color-muted);
+        }
+
+        /* Sections */
+
+        section {
+            padding: 3rem 0;
+        }
+
+        section:nth-of-type(odd) {
+            background: var(--color-bg-alt);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 0.4rem;
+            font-size: 1.6rem;
+        }
+
+        .section-kicker {
+            text-align: center;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-primary);
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 32rem;
+            margin: 0 auto 2rem;
+            color: var(--color-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Over */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+            gap: 2.2rem;
+            align-items: start;
+        }
+
+        .about-card {
+            background: var(--color-bg);
+            padding: 1.6rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .about-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 0;
+            font-size: 0.9rem;
+        }
+
+        .about-list li {
+            margin-bottom: 0.35rem;
+            padding-left: 1.1rem;
+            position: relative;
+        }
+
+        .about-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--color-primary);
+        }
+
+        /* Diensten */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.4rem;
+        }
+
+        .card {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            padding: 1.4rem 1.5rem;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: var(--color-muted);
+        }
+
+        .card-tag {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .card-meta {
+            margin-top: auto;
+            padding-top: 0.7rem;
+            font-size: 0.86rem;
+            color: var(--color-muted);
+        }
+
+        /* Testimonials */
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+            gap: 1.5rem;
+        }
+
+        .testimonial {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            padding: 1.3rem 1.4rem;
+            box-shadow: var(--shadow-soft);
+            font-size: 0.92rem;
+        }
+
+        .testimonial-quote {
+            margin: 0 0 0.8rem;
+        }
+
+        .testimonial-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--color-muted);
+        }
+
+        /* FAQ */
+
+        .faq {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            padding: 1rem 1.1rem;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 0.7rem;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 0.35rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--color-muted);
+        }
+
+        /* Contact */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.3fr);
+            gap: 1.8rem;
+        }
+
+        form {
+            background: var(--color-bg-alt);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+        }
+
+        label {
+            display: block;
+            font-size: 0.86rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.6rem 0.7rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.08);
+            font-family: inherit;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            background: #fafafa;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            font-size: 0.94rem;
+            color: var(--color-muted);
+        }
+
+        .contact-info p {
+            margin-top: 0;
+        }
+
+        .contact-highlight {
+            background: var(--color-bg-alt);
+            padding: 1rem 1.1rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 1.4rem 0 1.8rem;
+            background: var(--color-primary-dark);
+            color: #f7f6f2;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.7rem;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            opacity: 0.9;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 860px) {
+            .hero-grid,
+            .about-grid,
+            .testimonials,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 2.5rem;
+            }
+
+            nav ul {
+                display: none; /* eenvoudige versie zonder mobiel menu; kan later uitgebreid worden */
+            }
+        }
+
+        @media (max-width: 540px) {
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-mini {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav">
+        <div class="logo">
+            <div class="logo-mark">YL</div>
+            <div>Hondengedrag<br>Yasmine Leyman</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#over">Over</a></li>
+                <li><a href="#diensten">Aanbod</a></li>
+                <li><a href="#ervaringen">Ervaringen</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-kicker">Hondengedragstherapie</div>
+                <h1>Samen naar meer <span>rust</span> en <span>vertrouwen</span> tussen jou en je hond.</h1>
+                <p class="hero-subtitle">
+                    Ik ben Yasmine Leyman, hondengedragstherapeut. Ik help jou je hond beter begrijpen,
+                    zodat probleemgedrag plaats maakt voor duidelijkheid en verbinding.
+                </p>
+
+                <div class="hero-badges">
+                    <div class="badge">Positieve, hondvriendelijke aanpak</div>
+                    <div class="badge">Begeleiding op maat</div>
+                    <div class="badge">Aan huis in de regio (in te vullen)</div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#contact">
+                        <button class="btn-primary">Plan een kennismaking</button>
+                    </a>
+                    <a href="#diensten">
+                        <button class="btn-ghost">Bekijk het aanbod</button>
+                    </a>
+                </div>
+
+                <p class="hero-note">
+                    Tijdens een intake bekijken we rustig jullie situatie, de leefomgeving en de hulpvraag.
+                </p>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-paw"></div>
+                    <div class="hero-photo"></div>
+                    <div class="hero-mini">
+                        <div class="hero-mini-block">
+                            <div class="hero-mini-title">Gedragsconsulten</div>
+                            <div class="hero-mini-sub">Aan huis, met praktisch stappenplan.</div>
+                        </div>
+                        <div class="hero-mini-block">
+                            <div class="hero-mini-title">Puppybegeleiding</div>
+                            <div class="hero-mini-sub">Een goede start voor pup én gezin.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OVER -->
+    <section id="over">
+        <div class="container">
+            <div class="section-kicker">Over Yasmine</div>
+            <h2 class="section-title">Wie ik ben en hoe ik werk</h2>
+            <p class="section-intro">
+                Hondengedrag is nooit zomaar “stout zijn”. Achter elk gedrag zit een reden.
+                Samen zoeken we uit wat jouw hond nodig heeft om zich veilig en begrepen te voelen.
+            </p>
+
+            <div class="about-grid">
+                <div>
+                    <h3>Even voorstellen</h3>
+                    <p>
+                        Ik ben <strong>Yasmine Leyman</strong>, hondengedragstherapeut en grote liefhebber
+                        van alles wat met hondentaal te maken heeft. Mijn passie begon toen ik merkte hoe
+                        misverstanden tussen hond en mens tot stress en frustratie aan beide kanten kunnen leiden.
+                    </p>
+                    <p>
+                        Intussen volgde ik verschillende opleidingen en bijscholingen rond gedrag, lichaamstaal
+                        en welzijn van honden. In elk traject staat het <strong>welzijn van de hond</strong>
+                        centraal én kijken we ook naar wat haalbaar is voor jou als eigenaar.
+                    </p>
+                    <p>
+                        Mijn aanpak is rustig, duidelijk en hondvriendelijk: zonder dwang, pijn of intimidatie.
+                        We bouwen stap voor stap aan nieuw gedrag, met respect voor het tempo van jouw hond.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Wat je van mij mag verwachten</h3>
+                    <ul class="about-list">
+                        <li>Een luisterend oor voor jouw verhaal en jouw vragen.</li>
+                        <li>Observatie van hond én omgeving – niet alleen het gedrag maar ook de context.</li>
+                        <li>Een helder behandelplan in gewone mensentaal.</li>
+                        <li>Concrete oefeningen om thuis mee aan de slag te gaan.</li>
+                        <li>Opvolging en bijsturing waar nodig.</li>
+                        <li>Respect voor grenzen – van hond én mens.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIENSTEN -->
+    <section id="diensten">
+        <div class="container">
+            <div class="section-kicker">Aanbod</div>
+            <h2 class="section-title">Begeleiding op maat van jou en je hond</h2>
+            <p class="section-intro">
+                Elk traject start met een intake. Aan de hand daarvan bekijken we welke begeleiding
+                het best past bij jullie situatie.
+            </p>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="card-tag">Puppy</div>
+                    <h3>Puppybegeleiding aan huis</h3>
+                    <p>
+                        Voor een fijne start samen. We bekijken bijten, zindelijkheid, alleen blijven,
+                        omgang met kinderen, wandelen aan de lijn en meer.
+                    </p>
+                    <div class="card-meta">
+                        • Duur: ± 1,5 uur<br>
+                        • Individuele begeleiding bij jullie thuis
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-tag">Gedragstherapie</div>
+                    <h3>Gedragsconsult probleemgedrag</h3>
+                    <p>
+                        Voor honden die blaffen, uitvallen, angstig zijn, moeilijk alleen blijven of
+                        ander probleemgedrag tonen. We zoeken naar de oorzaak én een haalbare oplossing.
+                    </p>
+                    <div class="card-meta">
+                        • Intake + observatie<br>
+                        • Persoonlijk stappenplan + verslag
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-tag">Wandelen</div>
+                    <h3>Wandelsessies & leash training</h3>
+                    <p>
+                        Wandelen zonder trekken, leren omgaan met prikkels en spanning buitenshuis.
+                        We oefenen in een rustige omgeving en bouwen geleidelijk op.
+                    </p>
+                    <div class="card-meta">
+                        • Praktische sessies buiten<br>
+                        • Geschikt voor jonge én volwassen honden
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-tag">Online</div>
+                    <h3>Online adviesgesprek</h3>
+                    <p>
+                        Voor algemene vragen over gedrag, voorbereiding op een pup of het overlopen
+                        van jouw huidige trainingsaanpak.
+                    </p>
+                    <div class="card-meta">
+                        • Videogesprek via (tool in te vullen)<br>
+                        • Handig als eerste kennismaking
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="ervaringen">
+        <div class="container">
+            <div class="section-kicker">Ervaringen</div>
+            <h2 class="section-title">Blije baasjes, ontspannen honden</h2>
+            <p class="section-intro">
+                Namen en verhalen hieronder zijn voorbeelden. Je kunt hier later echte ervaringen
+                van klanten met foto’s toevoegen.
+            </p>
+
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-quote">
+                        “Onze hond Milo blafte naar alles en iedereen. Na het traject met Yasmine begrijpen
+                        we eindelijk waarom hij zo reageerde, en hebben we handvatten om hem te helpen.
+                        De wandelingen zijn nu zoveel rustiger.”
+                    </p>
+                    <div class="testimonial-meta">
+                        <span>– Sarah & Milo</span>
+                        <span>Gedragsconsult + opvolging</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">
+                        “De puppybegeleiding gaf ons veel meer vertrouwen. Yasmine legde rustig uit wat normaal
+                        puppengedrag is en hoe we grenzen kunnen aangeven zonder streng te zijn. Onze kinderen
+                        weten nu ook beter hoe ze met de pup moeten omgaan.”
+                    </p>
+                    <div class="testimonial-meta">
+                        <span>– Familie De Smet</span>
+                        <span>Puppybegeleiding aan huis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-kicker">FAQ</div>
+            <h2 class="section-title">Veelgestelde vragen</h2>
+            <p class="section-intro">
+                Hieronder een aantal veelgestelde vragen. Je kunt deze lijst later uitbreiden of aanpassen
+                aan jouw manier van werken.
+            </p>
+
+            <div class="faq">
+                <div class="faq-item">
+                    <h3>Werk je met alle hondenrassen en leeftijden?</h3>
+                    <p>
+                        Ja. Zowel pups, pubers als volwassen honden zijn welkom, ongeacht het ras.
+                        Bij ernstige medische problemen werk ik altijd in overleg met een dierenarts.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>Welke methode gebruik je?</h3>
+                    <p>
+                        Ik werk met een positieve, beloningsgerichte en welzijnsgerichte aanpak.
+                        Dat betekent dat we geen gebruik maken van hulpmiddelen die pijn, angst of intimidatie veroorzaken.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>Hoe verloopt een eerste gedragsconsult?</h3>
+                    <p>
+                        Tijdens de intake luister ik naar jullie verhaal, observeer ik het gedrag van de hond
+                        en stel ik gerichte vragen. Daarna overlopen we samen een plan van aanpak en krijg je
+                        concrete tips om meteen mee te starten.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>In welke regio werk je?</h3>
+                    <p>
+                        Hier kun je later jouw werkgebied invullen (bijvoorbeeld: Gent en omgeving, of een bepaalde straal rondom jouw woonplaats).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-kicker">Contact</div>
+            <h2 class="section-title">Plan een kennismaking</h2>
+            <p class="section-intro">
+                Vertel kort iets over jouw hond en jullie hulpvraag. Ik neem zo snel mogelijk contact met je op
+                om samen te bekijken welke begeleiding past.
+            </p>
+
+            <div class="contact-grid">
+                <form>
+                    <label for="naam">Naam</label>
+                    <input type="text" id="naam" name="naam" placeholder="Je naam">
+
+                    <label for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" placeholder="naam@voorbeeld.be">
+
+                    <label for="telefoon">Telefoonnummer (optioneel)</label>
+                    <input type="tel" id="telefoon" name="telefoon" placeholder="">
+
+                    <label for="hond">Naam en leeftijd van je hond</label>
+                    <input type="text" id="hond" name="hond" placeholder="Bijv. Luna, 3 jaar">
+
+                    <label for="boodschap">Waarmee kan ik jullie helpen?</label>
+                    <textarea id="boodschap" name="boodschap" placeholder="Beschrijf kort het gedrag of je vraag..."></textarea>
+
+                    <button type="submit" class="btn-primary">Verstuur je bericht</button>
+                </form>
+
+                <div class="contact-info">
+                    <p>
+                        <strong>Praktijk hondengedragstherapie – Yasmine Leyman</strong><br>
+                        (Adres en regio kun je hier later invullen)
+                    </p>
+                    <p>
+                        <strong>E-mail:</strong> info@yasmineleyman.be (voorbeeld)<br>
+                        <strong>Telefoon:</strong> 0000 / 00 00 00 (voorbeeld)
+                    </p>
+
+                    <div class="contact-highlight">
+                        <strong>Goed om te weten:</strong><br>
+                        • Tijdens consulten neem ik geen telefoon op, maar je mag altijd een bericht nalaten.<br>
+                        • Bij noodsituaties rond agressie, vermeld dit meteen in je bericht zodat ik kan inschatten
+                        hoe dringend de situatie is.<br>
+                        • In sommige gevallen werk ik graag samen met jouw dierenarts.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <div>
+            © <span id="year"></span> Hondengedrag Yasmine Leyman – Alle rechten voorbehouden.
+        </div>
+        <div class="footer-links">
+            <a href="#top">Naar boven</a>
+            <a href="#">Privacybeleid (in te vullen)</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // eenvoudig scriptje om automatisch het juiste jaar te tonen
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
