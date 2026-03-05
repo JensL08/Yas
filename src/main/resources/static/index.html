@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Hondengedragstherapeut Yasmine Leyman</title>
+    <title>Hondencoach Yasmine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hondengedragstherapie op maat door Yasmine Leyman. Samen werken aan meer rust en vertrouwen tussen jou en je hond.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,6 +218,16 @@
             cursor: pointer;
             color: var(--color-text);
         }
+        .btn-primary, .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .btn-ghost:hover {
+            border-color: rgba(0,0,0,0.14);
+            background: rgba(0,0,0,0.02);
+        }
 
         .hero-note {
             margin-top: 1rem;
@@ -253,24 +263,19 @@
             border-radius: 18px;
             background: linear-gradient(135deg, #fbe3c5, #e2f1e7);
             height: 220px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            position: relative;
             overflow: hidden;
         }
 
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* placeholder uitzetten nu je een echte foto gebruikt */
         .hero-photo::after {
-            content: "Plaats hier een foto van Yasmine met een hond";
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: #666;
-            padding: 1rem;
-            text-align: center;
+            content: none;
         }
 
         .hero-mini {
@@ -592,14 +597,15 @@
     <div class="container nav">
         <div class="logo">
             <div class="logo-mark">YL</div>
-            <div>Hondengedrag<br>Yasmine Leyman</div>
+            <div>Hondencoach<br>Yasmine</div>
         </div>
         <nav>
             <ul>
-                <li><a href="#over">Over</a></li>
-                <li><a href="#diensten">Aanbod</a></li>
-                <li><a href="#ervaringen">Ervaringen</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#top">Home</a></li>
+                <li><a href="#over">Over mij en mijn werkwijze</a></li>
+                <li><a href="#diensten">Gedragstrajecten</a></li>
+                <li><a href="#faq">Puppy en puber</a></li>
+                <li><a href="#prijzen">Prijzen</a></li>
                 <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
         </nav>
@@ -626,12 +632,8 @@
                 </div>
 
                 <div class="hero-actions">
-                    <a href="#contact">
-                        <button class="btn-primary">Plan een kennismaking</button>
-                    </a>
-                    <a href="#diensten">
-                        <button class="btn-ghost">Bekijk het aanbod</button>
-                    </a>
+                    <a class="btn-primary" href="#contact">Plan een kennismaking</a>
+                    <a class="btn-ghost" href="#diensten">Bekijk het aanbod</a>
                 </div>
 
                 <p class="hero-note">
@@ -642,7 +644,9 @@
             <div class="hero-visual">
                 <div class="hero-card">
                     <div class="hero-paw"></div>
-                    <div class="hero-photo"></div>
+                    <div class="hero-photo">
+                        <img src="images/yasmine-met-hond.jpg" alt="Yasmine met een hond" loading="lazy">
+                    </div>
                     <div class="hero-mini">
                         <div class="hero-mini-block">
                             <div class="hero-mini-title">Gedragsconsulten</div>
@@ -809,29 +813,28 @@
     <section id="faq">
         <div class="container">
             <div class="section-kicker">FAQ</div>
-            <h2 class="section-title">Veelgestelde vragen</h2>
+            <h2 class="section-title">Puppy's en pubers</h2>
             <p class="section-intro">
-                Hieronder een aantal veelgestelde vragen. Je kunt deze lijst later uitbreiden of aanpassen
-                aan jouw manier van werken.
+                Dit stuk gaat over puppy's en pubers en mijn begeleiding op maat hiervoor.
             </p>
 
             <div class="faq">
                 <div class="faq-item">
-                    <h3>Werk je met alle hondenrassen en leeftijden?</h3>
+                    <h3>pups onder 6 maand</h3>
                     <p>
                         Ja. Zowel pups, pubers als volwassen honden zijn welkom, ongeacht het ras.
                         Bij ernstige medische problemen werk ik altijd in overleg met een dierenarts.
                     </p>
                 </div>
                 <div class="faq-item">
-                    <h3>Welke methode gebruik je?</h3>
+                    <h3>pups tussen 6 en 12 maand</h3>
                     <p>
                         Ik werk met een positieve, beloningsgerichte en welzijnsgerichte aanpak.
                         Dat betekent dat we geen gebruik maken van hulpmiddelen die pijn, angst of intimidatie veroorzaken.
                     </p>
                 </div>
                 <div class="faq-item">
-                    <h3>Hoe verloopt een eerste gedragsconsult?</h3>
+                    <h3>pubers</h3>
                     <p>
                         Tijdens de intake luister ik naar jullie verhaal, observeer ik het gedrag van de hond
                         en stel ik gerichte vragen. Daarna overlopen we samen een plan van aanpak en krijg je
@@ -844,6 +847,41 @@
                         Hier kun je later jouw werkgebied invullen (bijvoorbeeld: Gent en omgeving, of een bepaalde straal rondom jouw woonplaats).
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Prijzen -->
+    <section id="prijzen">
+        <div class="container">
+            <div class="section-kicker">Prijzen</div>
+            <h2 class="section-title">Tarieven</h2>
+            <p class="section-intro">
+                Hieronder vind je richtprijzen. Na een korte kennismaking bekijken we samen wat het best past bij jullie.
+            </p>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="card-tag">Intake</div>
+                    <h3>Intake consult aan huis</h3>
+                    <p>Observatie + uitleg + eerste stappenplan.</p>
+                    <div class="card-meta">• ± 1,5 uur • € …</div>
+                </article>
+
+                <article class="card">
+                    <div class="card-tag">Opvolging</div>
+                    <h3>Opvolgsessie</h3>
+                    <p>Bijsturen, oefenen en verder opbouwen.</p>
+                    <div class="card-meta">• ± 1 uur • € …</div>
+                </article>
+
+                <article class="card">
+                    <div class="card-tag">Online</div>
+                    <h3>Online adviesgesprek</h3>
+                    <p>Voor algemene vragen of voorbereiding.</p>
+                    <div class="card-meta">• ± 45 min • € …</div>
+                </article>
             </div>
         </div>
     </section>
@@ -861,10 +899,10 @@
             <div class="contact-grid">
                 <form>
                     <label for="naam">Naam</label>
-                    <input type="text" id="naam" name="naam" placeholder="Je naam">
+                    <input type="text" id="naam" name="naam" placeholder="Je naam" required>
 
                     <label for="email">E-mailadres</label>
-                    <input type="email" id="email" name="email" placeholder="naam@voorbeeld.be">
+                    <input type="email" id="email" name="email" placeholder="naam@voorbeeld.be" required>
 
                     <label for="telefoon">Telefoonnummer (optioneel)</label>
                     <input type="tel" id="telefoon" name="telefoon" placeholder="">
@@ -873,9 +911,12 @@
                     <input type="text" id="hond" name="hond" placeholder="Bijv. Luna, 3 jaar">
 
                     <label for="boodschap">Waarmee kan ik jullie helpen?</label>
-                    <textarea id="boodschap" name="boodschap" placeholder="Beschrijf kort het gedrag of je vraag..."></textarea>
+                    <textarea id="boodschap" name="boodschap" placeholder="Beschrijf kort het gedrag of je vraag..." required></textarea>
 
                     <button type="submit" class="btn-primary">Verstuur je bericht</button>
+                    <p class="hero-note" style="margin:0.6rem 0 0;">
+                        Door dit formulier te versturen ga je akkoord dat ik je gegevens gebruik om je te contacteren over je aanvraag.
+                    </p>
                 </form>
 
                 <div class="contact-info">
@@ -884,8 +925,9 @@
                         (Adres en regio kun je hier later invullen)
                     </p>
                     <p>
-                        <strong>E-mail:</strong> info@yasmineleyman.be (voorbeeld)<br>
-                        <strong>Telefoon:</strong> 0000 / 00 00 00 (voorbeeld)
+                        <strong>E-mail:</strong> info@yasmineleyman.be <br>
+                        <strong>Telefoon:</strong> <a href="tel:+32499157641">04 99 15 76 41</a><br>
+                        <strong>Instagram:</strong> <a href="https://www.instagram.com/yasmineleyman/" target="_blank">yasmineleyman</a>
                     </p>
 
                     <div class="contact-highlight">
