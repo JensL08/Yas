@@ -321,30 +321,58 @@
             </p>
 
             <div class="contact-grid">
-                <form action="https://api.web3forms.com/submit" method="POST">
 
-                    <input type="hidden" name="access_key"
-                           value="8d9c4994-89a7-45a9-ae22-067a0728693e">
-                    <label for="naam">Naam</label>
-                    <input type="text" id="naam" name="naam" placeholder="Je naam" required>
+                <div class="contact-form-wrapper">
 
-                    <label for="email">E-mailadres</label>
-                    <input type="email" id="email" name="email" placeholder="naam@voorbeeld.be" required>
+                    <form id="contact-form"
+                          action="https://api.web3forms.com/submit"
+                          method="POST">
 
-                    <label for="telefoon">Telefoonnummer (optioneel)</label>
-                    <input type="tel" id="telefoon" name="telefoon" placeholder="">
+                        <input type="hidden" name="access_key"
+                               value="8d9c4994-89a7-45a9-ae22-067a0728693e">
 
-                    <label for="hond">Naam en leeftijd van je hond</label>
-                    <input type="text" id="hond" name="hond" placeholder="Bijv. Luna, 3 jaar">
+                        <label for="naam">Naam</label>
+                        <input type="text" id="naam" name="naam"
+                               placeholder="Je naam" required>
 
-                    <label for="boodschap">Waarmee kan ik jullie helpen?</label>
-                    <textarea id="boodschap" name="boodschap" placeholder="Beschrijf kort het gedrag of je vraag..." required></textarea>
+                        <label for="email">E-mailadres</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="naam@voorbeeld.be" required>
 
-                    <button type="submit" class="btn-primary">Verstuur je bericht</button>
-                    <p class="hero-note" style="margin:0.6rem 0 0;">
-                        Door dit formulier te versturen ga je akkoord dat ik je gegevens gebruik om je te contacteren over je aanvraag.
-                    </p>
-                </form>
+                        <label for="telefoon">Telefoonnummer (optioneel)</label>
+                        <input type="tel" id="telefoon" name="telefoon">
+
+                        <label for="hond">Naam en leeftijd van je hond</label>
+                        <input type="text" id="hond" name="hond"
+                               placeholder="Bijv. Luna, 3 jaar">
+
+                        <label for="boodschap">Waarmee kan ik jullie helpen?</label>
+                        <textarea id="boodschap" name="boodschap"
+                                  placeholder="Beschrijf kort het gedrag of je vraag..."
+                                  required></textarea>
+
+                        <button type="submit" class="btn-primary">
+                            Verstuur je bericht
+                        </button>
+
+                        <p class="hero-note" style="margin:0.6rem 0 0;">
+                            Door dit formulier te versturen ga je akkoord
+                            dat ik je gegevens gebruik om je te contacteren
+                            over je aanvraag.
+                        </p>
+
+                    </form>
+
+                    <div id="form-message" class="form-message"
+                         role="status" aria-live="polite" hidden>
+                        <h3>🐾 Bedankt voor je bericht!</h3>
+                        <p>
+                            Je bericht is succesvol verzonden.
+                            Ik neem zo snel mogelijk contact met je op.
+                        </p>
+                    </div>
+
+                </div>
 
                 <div class="contact-info">
                     <p>
@@ -352,9 +380,12 @@
                         (Adres en regio kun je hier later invullen)
                     </p>
                     <p>
-                        <strong>E-mail:</strong> info@yasmineleyman.be <br>
+                        <strong>E-mail:</strong>
+                        <a href="mailto:info@hondencoachyasmine.be">
+                            info@hondencoachyasmine.be
+                        </a><br>
                         <strong>Telefoon:</strong> <a href="tel:+32499157641">+324 99 15 76 41</a><br>
-                        <strong>Instagram:</strong> <a href="https://www.instagram.com/yasmineleyman/" target="_blank">yasmineleyman</a>
+                        <strong>Instagram:</strong> <a href="https://www.instagram.com/hondencoachyasmine/" target="_blank">hondencoachyasmine</a>
                     </p>
 
                     <div class="contact-highlight">
@@ -402,6 +433,48 @@
             navMenu.classList.remove('open');
             menuToggle.setAttribute('aria-expanded', 'false');
         });
+    });
+</script>
+<script>
+    const contactForm = document.getElementById("contact-form");
+    const formMessage = document.getElementById("form-message");
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        if (!contactForm.reportValidity()) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Bezig met verzenden...";
+
+        try {
+            const formData = new FormData(contactForm);
+
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+                throw new Error("Verzenden mislukt");
+            }
+
+            contactForm.reset();
+            contactForm.hidden = true;
+            formMessage.hidden = false;
+
+        } catch (error) {
+            alert("Je bericht kon niet worden verzonden. Probeer het opnieuw.");
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Verstuur je bericht";
+        }
     });
 </script>
 

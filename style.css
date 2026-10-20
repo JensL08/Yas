@@ -604,3 +604,26 @@ footer {
         flex-direction: column;
     }
 }
+.form-message {
+    background: #f1f8f0;
+    border: 1px solid #c7e3c3;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-message h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #315c3a;
+}
+
+.form-message p {
+    line-height: 1.7;
+    color: #405347;
+}
+
+[hidden] {
+    display: none !important;
+}
